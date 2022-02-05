@@ -1,0 +1,47 @@
+Node JS === === === ==
+
+
+is runtime environment which uses the V8 engine ,where you can run javascript on physical machine.
+can use as server side component.
+
+where express js is developer framework
+and mongoDB as database.
+
+fullStack development.
+MEAN  ==> MangoDB + Express js + Angular + Node js
+MERN  ==> MangoDB + Express js + React + Node js
+
+npm(node package manager)
+
+version====> 13.12.9  ==>(major release . minor release . bug fixes)
+
+
+                                  another server
+                                /
+                               /
+clients   ----->   server  ----- ----- database
+          <----                \
+                                \
+                                  file system
+
+
+in java web server (tomcat server) has multiple Threads (200)
+
+but in node js there is only one Thread then how do node js handle multiple request
+Ans ==>  node js uses two concept 
+           1). Non-blocking I/O  ==>  it wont block request from miltiple client and send request to another server to and thread free.
+                                      that's why node js is not preferable for CPU intesive work ,mostly is preferable for I/O intesive work
+          
+           2). Asynchronous   ===>    to provide response to client in case of multiple client req , node js use callback method (Asynchronous)
+
+
+             and node js uses the libuv library which is built in c-lang which uses system kernel and which has multiple threads.
+             so basically node js uses multiple thread 
+
+
+node package manager:
+      npm is the default package manager for the JavaScript runtime environment Node.js.
+
+
+Express :
+    is a back end web application framework for Node.js

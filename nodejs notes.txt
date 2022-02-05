@@ -18,14 +18,32 @@ version====> 13.12.9  ==>(major release . minor release . bug fixes)
 
 Req -Response model or client- server architecture
 
-                                  another server
-                                /
-                               /
-clients   ----->   server  ----- ----- database
-          <----                \
-                                \
-                                  file system
+           HTTP request                             another server
+        ----------------------------->            /
+          TCP/IP socket connections              /
+clients <---------------------------->   server  ---------- database
+          <--------------------------            \
+            HTTP Response                         \
+                                                    file system
 
+client    https://216.58.211.205:443
+          protocol       + IP address +    Port number
+          HTTP or HTTPS                    443 for HTTPS and 80 for HTTP
+
+
+TCP - transmission control protocol
+
+
+     Front-End                                                                 Back-End
+                                                                web server
+                                                   ________________________________________                    ____________
+                                                   |                                      |                    |          |
+                                                   |  {HTTP Server} <==========> {APP}    |                    |__________|              
+                       |---------|   ------->      |            \              /          | ---------------->  | DATA     |          
+   Web site  <------   | BROWSER |                 |             \            /           | <----------------  |__________|              
+                       |---------|   <-------      |              \          /            |                    | BASE     |
+                                                   |                {Files}               |                    |__________|   
+                                                   |______________________________________|                                          
 
 in java web server (tomcat server) has multiple Threads (200)
 

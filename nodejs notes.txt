@@ -16,6 +16,8 @@ npm(node package manager)
 version====> 13.12.9  ==>(major release . minor release . bug fixes)
 
 
+Req -Response model or client- server architecture
+
                                   another server
                                 /
                                /

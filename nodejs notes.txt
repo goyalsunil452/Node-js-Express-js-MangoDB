@@ -45,6 +45,13 @@ TCP - transmission control protocol
                                                    |                {Files}               |                    |__________|   
                                                    |______________________________________|                                          
 
+Node Architecture behind the scenes
+
+    javascript ---->  google V8 engine ------> machine code ---->   Node can understand this
+
+to create server side framework node js require libuv library
+
+
 in java web server (tomcat server) has multiple Threads (200)
 
 but in node js there is only one Thread then how do node js handle multiple request
@@ -63,5 +70,44 @@ node package manager:
       npm is the default package manager for the JavaScript runtime environment Node.js.
 
 
-Express :
-    is a back end web application framework for Node.js
+
+node js process is c++ code which running on machine running
+node js run on single thread
+
+if libuv has heavy task (file system api, cryptography, compression, DNS lookup, etc) it uses Thread pool other wise it uses Event Loop.
+
+
+Event Loop ===>>  All aplication code that is inside callback function(non-top-level code);
+                  node js is build around callback function.
+                  Event-driven architecture.
+                  Event loop does orchestration
+
+      check event-loop.js for event and thread concept.
+
+      Streams ==>  used to process(read and write) data piece by piece without completing the whole read or write
+                   operation and therefore without keeping all the data in memory
+                   example : netflix and youtube
+
+Callback hell ==> also known as Pyramid of Doom, is an anti-pattern seen in code of asynchronous programming. 
+                  It is a slang term used to describe and unwieldy number of nested “if” statements or functions.
+                  If you are not expecting your application logic to get too complex, a few callbacks seem harmless.
+
+            it can be resolved by using promises
+
+promises ==>  Promises in javascript are a way to handle asynchronous operations in Node. js.
+
+
+
+=======================================================================================================================
+
+ EXPRESS JS ✔😁
+
+Express ==> is minimal node.js framework, higher level of abstraction.
+            is a back end web application framework for Node.js 
+
+            It contains a very robust set if features like complex routing, 
+            easier handling of requests and response, middleware, server-side rendering.
+
+            it allow for rapid development of node.js application.
+
+            express make it easier to organize our application into the MVC architecture.

@@ -1,3 +1,5 @@
+// callback , promisses , async and await
+
 const fs = require('fs');
 const superagent = require('superagent');
 
@@ -87,4 +89,26 @@ readFilePro(`${__dirname}/dog.txt`)
   .catch(err => {
     console.log(err);
   });
+*/
+
+// usnig async and await of the above example
+/*
+const getDogPic2 = async () => {
+  try {
+    const data = await readFilePro(`${__dirname}/dog.txt`);
+    console.log(`Breed: ${data}`);
+
+    const res = superagent.get(
+      `https://dog.ceo/api/breed/${data}/images/random`
+    );
+    console.log(res.body.message);
+
+    await writeFilePro('dog-img.txt', imgs.join('\n'));
+    console.log('Random dog image saved to file!');
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+  return '2: READY 🐶';
+};
 */

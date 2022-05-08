@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start":"nodemon node-js/server.js"
+    "start":"nodemon node-js/server.js",
+    "start-index":"nodemon node-js/index.js"
   },
   "dependencies": {
     "express": "^4.17.2",
